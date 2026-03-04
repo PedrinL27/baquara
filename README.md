@@ -1,11 +1,10 @@
 # Baquara
 
 <p align="center">
-  <img src="docs/assets/logo.png" alt="Baquara Logo" width="200">
+  <img src="docs/assets/logo_fundobranco.png" alt="Baquara Logo" width="200">
 </p>
 
 
----
 
 ## Sobre o Projeto
 
@@ -15,7 +14,6 @@ Vivemos em uma era de abundância informacional, mas o acesso qualificado ao con
 
 Todo conteúdo disponibilizado no Baquara é gratuito para o usuário final.
 
----
 
 ## Objetivos
 
@@ -25,7 +23,6 @@ Todo conteúdo disponibilizado no Baquara é gratuito para o usuário final.
 - Estimular colaboração voluntária na produção de conhecimento
 - Desenvolver uma infraestrutura digital ética e transparente
 
----
 
 ## O que o Baquara não é
 
@@ -36,7 +33,6 @@ Todo conteúdo disponibilizado no Baquara é gratuito para o usuário final.
 
 O foco está na clareza, simplicidade e autonomia do usuário.
 
----
 
 ## Modelo de Conteúdo
 
@@ -54,7 +50,7 @@ O Baquara atua em duas frentes:
 Iniciativas pagas podem coexistir fora da plataforma.  
 Dentro do Baquara, o acesso será sempre gratuito.
 
----
+
 
 ## Estrutura Técnica (em desenvolvimento)
 
@@ -65,7 +61,6 @@ Infraestrutura: Docker
 
 Status: Projeto em estágio inicial
 
----
 
 ## Como Contribuir
 
@@ -80,16 +75,13 @@ Você pode contribuir:
 - Participando da discussão conceitual do projeto
 - Produzindo conteúdo educacional voluntário
 
----
 
 ## Licença
 
 Este projeto está licenciado sob a licença AGPL-3.0.
 
----
 
 ## Visão de Longo Prazo
 
 O Baquara busca se consolidar como uma fundação digital voltada à organização do conhecimento aberto, contribuindo para ampliar a autonomia intelectual e o acesso à educação.
 
----
