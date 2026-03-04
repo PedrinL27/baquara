@@ -1,10 +1,10 @@
-# Baquara
 
 <p align="center">
-  <img src="docs/assets/logo_fundobranco.png" alt="Baquara Logo" width="200">
+  <img src="docs/assets/logo_fundobranco.png" alt="Baquara Logo" width="500">
 </p>
 
-
+![Status](https://img.shields.io/badge/status-early%20stage-yellow)
+![License](https://img.shields.io/badge/license-AGPL--3.0-blue)
 
 ## Sobre o Projeto
 
