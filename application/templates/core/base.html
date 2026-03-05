@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Baquara</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/home/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Baquara</h1>
+    <nav>
+        <a href="/">Início</a>
+    </nav>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    © 2026 Baquara — Infraestrutura digital para conhecimento livre.
+</footer>
+
+</body>
+</html>

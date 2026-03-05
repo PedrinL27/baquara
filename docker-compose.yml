@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16
+    container_name: baquara_db
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+
+  web:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile
+    container_name: baquara_web
+    volumes:
+      - ./application:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:
