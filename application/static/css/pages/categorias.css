@@ -1,0 +1,42 @@
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card-link {
+    flex: 1 1 250px; 
+    text-decoration: none;
+    color: inherit;
+    display: flex; 
+}
+
+.card {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.card:hover {
+  border-color: var(--primary);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--text);
+}
+
+.card p {
+  margin: 10px 0 20px;
+}

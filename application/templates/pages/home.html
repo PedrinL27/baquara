@@ -1,0 +1,81 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<section class="home-hero">
+
+    <h1>Conhecimento gratuito, organizado.</h1>
+
+    <p>
+        O Baquara reúne e organiza conteúdos educacionais disponíveis na internet,
+        tornando mais fácil encontrar caminhos claros de aprendizado.
+    </p>
+
+    <a href="/categorias" class="btn-primary">
+        Explorar categorias
+    </a>
+
+</section>
+
+
+<section class="home-categories">
+
+    <h2>Principais Categorias</h2>
+
+    <div class="category-grid">
+
+        <a href="/categorias/programacao" class="category-card">
+            <h3>Programação</h3>
+            <p>Python, desenvolvimento web, algoritmos e ciência da computação.</p>
+        </a>
+
+        <a href="/categorias/design" class="category-card">
+            <h3>Design</h3>
+            <p>Design gráfico, UI, UX e fundamentos visuais.</p>
+        </a>
+
+        <a href="/categorias/matematica" class="category-card">
+            <h3>Matemática</h3>
+            <p>Álgebra, lógica, cálculo e fundamentos matemáticos.</p>
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<section class="home-how">
+
+    <h2>Como o Baquara funciona</h2>
+
+    <div class="how-grid">
+
+        <div>
+            <h3>Curadoria</h3>
+            <p>
+                Conteúdos educacionais gratuitos são catalogados e organizados
+                para facilitar a descoberta e o aprendizado.
+            </p>
+        </div>
+
+        <div>
+            <h3>Estrutura</h3>
+            <p>
+                Os materiais são agrupados por temas e caminhos de estudo,
+                evitando a fragmentação comum da internet.
+            </p>
+        </div>
+
+        <div>
+            <h3>Acesso livre</h3>
+            <p>
+                Todo conteúdo disponível na plataforma é gratuito para o usuário.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

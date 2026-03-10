@@ -1,0 +1,70 @@
+.navbar{
+ background:    var(--navbar-bg);
+ border-bottom:1px solid var(--border);
+}
+
+.navbar-inner{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:12px 0; /* um pouco mais alto */
+}
+
+
+.logo img{
+ max-height:100px; /* controla o tamanho da logo */
+ height:auto;
+ width:auto;
+ display:block;
+ border-radius:10px;
+ transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.nav-right{
+	margin-left: auto;
+	display:flex;
+	align-items:center;
+	gap:16px;
+}
+
+
+.nav-links{
+ display:flex;
+ align-items:center;
+ gap:24px;
+}
+
+.nav-links a{
+ text-decoration:none;
+ color:var(--text);
+ font-size:1.05rem;
+}
+
+.nav-links a:hover{
+ color:var(--primary);
+}
+
+.theme-toggle.bordered{
+
+ border:1px solid var(--border);
+ background:var(--background);
+
+ padding:6px 8px;
+ border-radius:6px;
+
+ cursor:pointer;
+
+ display:flex;
+ align-items:center;
+ justify-content:center;
+
+ color:var(--text);
+}
+
+.theme-toggle.bordered:hover{
+ background:var(--card-bg);
+}
+
+.theme-toggle{
+ transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+}

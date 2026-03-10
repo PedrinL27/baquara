@@ -1,0 +1,13 @@
+[data-theme="dark"] {
+
+  --background: #1c1f25;
+  --text: #e5e7eb;
+  --primary: #094186;
+  --secundary: #1258bb;
+  --border: #1f2937;
+
+  --navbar-bg: #1b1b1f;
+
+  --card-bg: #1b1b1f;
+
+}

@@ -1,0 +1,61 @@
+/* Container geral da página */
+
+.manifesto {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+/* espaçamento entre seções */
+
+.manifesto-section {
+    margin-bottom: 40px;
+}
+
+
+/* título principal */
+
+.manifesto-header {
+    margin-bottom: 40px;
+}
+
+
+/* listas */
+
+.manifesto-list {
+
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    padding-left: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* itens das listas */
+
+.manifesto-list li {
+
+    line-height: 1.6;
+}
+
+
+/* lista de princípios um pouco mais espaçada */
+
+.manifesto-principles {
+
+    gap: 16px;
+}
+
+
+/* negrito dos princípios */
+
+.manifesto-principles strong {
+
+    display: block;
+    margin-bottom: 4px;
+}
