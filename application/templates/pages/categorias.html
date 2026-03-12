@@ -1,17 +1,15 @@
 {% extends "base/base.html" %}
 
-{% block content %}
+{% block content %} 
 
 <div class="cards">
 
     {% for categoria in categorias %}
 
-    <a href="/categoria/{{ categoria.slug }}" class="card-link">
+    <a href="{% url 'categoria_detail' categoria.slug %}" class="card-link">
         <div class="card">
+            <i class="bi {{ categoria.icone }}"></i>
             <h3>{{ categoria.nome }}</h3>
-            {% if categoria.descricao_resumida %}
-            <p>{{ categoria.descricao_resumida}}</p>
-            {% endif %}
         </div>
     </a>
 

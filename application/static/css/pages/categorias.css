@@ -3,40 +3,49 @@
   margin: auto;
 }
 
+/* GRID CENTRALIZADO */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  justify-content: center;
   gap: 20px;
 }
 
+/* LINK */
 .card-link {
-    flex: 1 1 250px; 
-    text-decoration: none;
-    color: inherit;
-    display: flex; 
+  text-decoration: none;
+  color: inherit;
 }
 
+/* CARD */
 .card {
-    background-color: var(--background);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  padding: 20px;
+
+  height: 250px; /* tamanho fixo */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/* ÍCONE */
+.card i {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
 
-
+/* HOVER */
 .card:hover {
   border-color: var(--primary);
 }
 
+/* TEXTO */
 .card h3 {
-  margin-top: 0;
+  margin: 0;
   color: var(--text);
-}
-
-.card p {
-  margin: 10px 0 20px;
 }

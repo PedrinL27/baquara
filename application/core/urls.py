@@ -1,10 +1,7 @@
-
 from django.contrib import admin
 from django.urls import path
-from core.views import home
-from core.views import categorias
-from core.views import manifesto
-from core.views import sobre
+from . import views
+from core.views import home, categorias, manifesto, sobre
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -15,6 +12,8 @@ urlpatterns = [
     path('categorias/', categorias, name='categorias'),
     path('manifesto/', manifesto, name='manifesto'),
     path('sobre/', sobre, name='sobre'),
+    path('conteudo/<slug:slug>/', views.conteudo_detail, name='conteudo_detail'),
+    path('categoria/<slug:slug>/', views.categoria_detail, name='categoria_detail'),
 ]
 
 if settings.DEBUG:
