@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="curso-layout">
+{% include 'components/sidebar.html' %}
+
+<main class="curso-conteudo">
+
+    {% if aula_atual %}
+
+    <h1>{{ aula_atual.titulo }}</h1>
+
+    {% if aula_atual.conteudo_texto != "" %}
+        <div class="aula-texto">
+            {{ aula_atual.conteudo_texto|safe }}
+        </div>
+    {% endif %}
+
+    {% if aula_atual.tipo == "video" %}
+
+    <iframe
+        width="100%" height="500"
+        src="{{ aula_atual.video_url }}"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+
+    {% elif aula_atual.tipo == "pdf" %}
+
+    <a href="{{ aula_atual.arquivo_url }}" target="_blank" rel="noopener noreferrer">
+        Abrir material
+    </a>
+
+    {% endif %}
+
+    {% else %}
+
+    <h1>{{ conteudo.titulo }}</h1>
+    <p>{{ conteudo.resumo }}</p>
+
+    {% endif %}
+
+</main>
+</div>
+
+{% endblock %}

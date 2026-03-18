@@ -1,0 +1,37 @@
+<aside class="curso-sidebar">
+    {% for modulo in modulos %}
+    <div class="modulo">
+
+        <h3>{{ modulo.titulo }}</h3>
+
+        <ul>
+
+            {% for aula in modulo.aulas.all|dictsort:"ordem" %}
+
+            <li>
+
+                <a href="?aula={{ aula.id }}">
+
+                    {% if aula.tipo == "video" %}
+                    <i class="bi bi-film"></i>
+                    {% elif aula.tipo == "pdf" %}
+                    <i class="bi bi-filetype-pdf"></i>
+                    {% elif aula.tipo == "texto" %}
+                    <i class="bi bi-text-left"></i>
+                    {% endif %}
+
+                    {{ aula.titulo }}
+
+                </a>
+
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+    {% endfor %}
+
+</aside>

@@ -1,0 +1,45 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<div class="categoria-page">
+
+    <header class="categoria-header">
+        <h1 class="categoria-titulo">
+            {{ categoria.nome }}
+        </h1>
+    </header>
+
+    <section class="conteudos-grid">
+
+        {% for conteudo in conteudos %}
+
+        <article class="conteudo-card">
+
+            <a href="{% url 'conteudo_detail' conteudo.slug %}" class="card-link">
+
+                <h3 class="card-titulo">
+                    {{ conteudo.titulo }}
+                </h3>
+
+                <p class="card-resumo">
+                    {{ conteudo.resumo }}
+                </p>
+
+            </a>
+
+        </article>
+
+        {% empty %}
+
+        <p class="categoria-vazia">
+            Nenhum conteúdo nesta categoria.
+        </p>
+
+        {% endfor %}
+
+    </section>
+
+</div>
+
+{% endblock %}

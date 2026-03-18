@@ -128,3 +128,6 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Media files (PDFs and uploads)
+MEDIA_URL = '/pdfs/'

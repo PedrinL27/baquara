@@ -1,0 +1,137 @@
+/* LAYOUT GERAL */
+
+.curso-layout{
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+
+  max-width: var(--max-width);
+  margin: 40px auto;
+
+  padding: 0 20px;
+  font-family: var(--font-main);
+}
+
+
+/* SIDEBAR */
+
+.curso-sidebar{
+  background: var(--navbar-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  padding: 20px;
+
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+
+/* MODULOS */
+
+.modulo{
+  margin-bottom: 24px;
+}
+
+.modulo h3{
+  font-size: 15px;
+  font-weight: 600;
+
+  color: var(--text);
+
+  margin-bottom: 10px;
+}
+
+
+/* LISTA DE AULAS */
+
+.modulo ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modulo li{
+  margin-bottom: 6px;
+}
+
+
+/* LINK DA AULA */
+
+.modulo a{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 8px;
+
+  font-size: 14px;
+  text-decoration: none;
+
+  color: var(--text);
+
+  border-radius: 6px;
+
+  transition: 0.2s;
+}
+
+.modulo a:hover{
+  background: var(--background);
+}
+
+
+/* CONTEÚDO CENTRAL */
+
+.curso-conteudo{
+  background: var(--navbar-bg);
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  padding: 40px;
+}
+
+
+/* TÍTULO DA AULA */
+
+.curso-conteudo h1{
+  font-size: 28px;
+
+  margin-bottom: 20px;
+
+  color: var(--text);
+}
+
+
+/* TEXTO DA AULA */
+
+.aula-texto{
+  line-height: 1.7;
+  font-size: 16px;
+
+  color: var(--text);
+}
+
+
+/* VIDEO / PDF */
+
+.curso-conteudo iframe{
+  border: none;
+  border-radius: 6px;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 900px){
+
+  .curso-layout{
+    grid-template-columns: 1fr;
+  }
+
+  .curso-sidebar{
+    position: relative;
+  }
+
+}

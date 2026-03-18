@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Categoria
-from .models import Conteudo
+from .models import Categoria, Conteudo, Aula
 
 def home(request):
     return render(request, "pages/home.html")
@@ -29,15 +28,26 @@ def categoria_detail(request, slug):
         status='published'
     )
 
-    return render(request, 'pages/detail/categoria_detail.html', {
+    return render(request, 'pages/curso/cursos.html', {
         'categoria': categoria,
         'conteudos': conteudos
     })
 
 def conteudo_detail(request, slug):
 
-    conteudo = get_object_or_404(Conteudo, slug=slug)
+    conteudo = Conteudo.objects.get(slug=slug)
 
-    return render(request, 'pages/detail/conteudo_detail.html', {
-        'conteudo': conteudo
+    modulos = conteudo.modulos.all().order_by('ordem')
+
+    aula_id = request.GET.get("aula")
+
+    aula_atual = None
+
+    if aula_id:
+        aula_atual = Aula.objects.get(id=aula_id)
+
+    return render(request, "pages/curso/aulas.html", {
+        "conteudo": conteudo,
+        "modulos": modulos,
+        "aula_atual": aula_atual
     })

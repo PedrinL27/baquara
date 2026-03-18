@@ -95,7 +95,7 @@ class Aula(models.Model):
 
     video_url = models.URLField(blank=True, null=True)
 
-    pdf = models.FileField(upload_to='pdfs/', blank=True, null=True)
+    arquivo_url = models.URLField(blank=True, null=True)
 
     conteudo_texto = models.TextField(blank=True)
 
