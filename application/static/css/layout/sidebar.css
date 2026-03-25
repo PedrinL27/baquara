@@ -1,0 +1,8 @@
+li a {
+    display: flex;
+    align-items: center;
+}
+
+.check-aula {
+    margin-left: auto;
+}

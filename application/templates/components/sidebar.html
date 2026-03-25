@@ -1,37 +1,50 @@
 <aside class="curso-sidebar">
+  <button class="sidebar-toggle" onclick="toggleSidebar()">
+    <i class="bi bi-list"></i>
+    <span>Módulos do curso</span>
+    <i class="bi bi-chevron-down" id="sidebar-chevron" style="margin-left:auto"></i>
+  </button>
+
+  <div class="sidebar-corpo" id="sidebar-corpo">
     {% for modulo in modulos %}
-    <div class="modulo">
+    <div class="modulo" 
+         data-modulo-id="{{ modulo.id }}"
+         data-aulas="{% for aula in modulo.aulas.all %}{{ aula.id }}{% if not forloop.last %},{% endif %}{% endfor %}">
 
-        <h3>{{ modulo.titulo }}</h3>
+      <h3>
+        {{ modulo.titulo }}
+        <i class="bi bi-check-circle-fill check-modulo" style="display:none; color: var(--cor-primaria);"></i>
+      </h3>
 
-        <ul>
-
-            {% for aula in modulo.aulas.all|dictsort:"ordem" %}
-
-            <li>
-
-                <a href="?aula={{ aula.id }}">
-
-                    {% if aula.tipo == "video" %}
-                    <i class="bi bi-film"></i>
-                    {% elif aula.tipo == "pdf" %}
-                    <i class="bi bi-filetype-pdf"></i>
-                    {% elif aula.tipo == "texto" %}
-                    <i class="bi bi-text-left"></i>
-                    {% endif %}
-
-                    {{ aula.titulo }}
-
-                </a>
-
-            </li>
-
-            {% endfor %}
-
-        </ul>
+      <ul>
+        {% for aula in modulo.aulas.all|dictsort:"ordem" %}
+        <li data-aula-id="{{ aula.id }}">
+          <a href="?aula={{ aula.id }}">
+            {% if aula.tipo == "video" %}
+            <i class="bi bi-film"></i>
+            {% elif aula.tipo == "pdf" %}
+            <i class="bi bi-filetype-pdf"></i>
+            {% elif aula.tipo == "texto" %}
+            <i class="bi bi-text-left"></i>
+            {% endif %}
+            {{ aula.titulo }}
+            <i class="bi bi-check-lg check-aula" style="display:none; color: var(--cor-primaria);"></i>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
 
     </div>
-
     {% endfor %}
-
+  </div>
 </aside>
+
+<script>
+function toggleSidebar() {
+  const corpo = document.getElementById('sidebar-corpo');
+  const chevron = document.getElementById('sidebar-chevron');
+  const aberto = corpo.classList.toggle('aberto');
+  chevron.className = aberto ? 'bi bi-chevron-up' : 'bi bi-chevron-down';
+  chevron.style.marginLeft = 'auto';
+}
+</script>

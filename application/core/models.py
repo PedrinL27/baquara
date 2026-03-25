@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class Categoria(models.Model):
@@ -39,7 +40,7 @@ class Conteudo(models.Model):
     slug = models.SlugField(unique=True)
 
     resumo = models.TextField()
-    corpo = models.TextField()
+    corpo = CKEditor5Field('Texto', config_name='default')
 
     autor = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
@@ -97,6 +98,6 @@ class Aula(models.Model):
 
     arquivo_url = models.URLField(blank=True, null=True)
 
-    conteudo_texto = models.TextField(blank=True)
+    resumo = CKEditor5Field('Texto', config_name='default')
 
     ordem = models.IntegerField(default=0)

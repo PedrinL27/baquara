@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'django_ckeditor_5',  
 ]
 
 MIDDLEWARE = [
@@ -124,10 +125,33 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+        os.path.join(BASE_DIR, 'static'),
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Media files (PDFs and uploads)
 MEDIA_URL = '/pdfs/'
+
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': [
+            'heading', '|',
+            'bold', 'italic', 'link',
+            'bulletedList', 'numberedList',
+            'blockQuote', '|',
+            'codeBlock',  # 👈 adicione isso
+        ],
+        'codeBlock': {
+            'languages': [
+                {'language': 'plaintext', 'label': 'Plain text'},
+                {'language': 'python', 'label': 'Python'},
+                {'language': 'javascript', 'label': 'JavaScript'},
+                {'language': 'html', 'label': 'HTML'},
+                {'language': 'css', 'label': 'CSS'},
+                {'language': 'bash', 'label': 'Bash'},
+                {'language': 'sql', 'label': 'SQL'},
+            ]
+        },
+    }
+}

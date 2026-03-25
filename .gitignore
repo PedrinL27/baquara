@@ -208,3 +208,5 @@ __marimo__/
 
 # Static files coletados
 staticfiles/
+
+gunicorn.ctl

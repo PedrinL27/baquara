@@ -1,4 +1,5 @@
 {% extends 'base/base.html' %}
+{% load static %}
 
 {% block content %}
 
@@ -11,37 +12,73 @@
 
     <h1>{{ aula_atual.titulo }}</h1>
 
-    {% if aula_atual.conteudo_texto != "" %}
-        <div class="aula-texto">
-            {{ aula_atual.conteudo_texto|safe }}
+    {% if aula_atual.resumo != "" %}
+        <div class="aula-texto conteudo-aula">  
+            {{ aula_atual.resumo|safe }}
         </div>
     {% endif %}
 
     {% if aula_atual.tipo == "video" %}
-
-    <iframe
-        width="100%" height="500"
-        src="{{ aula_atual.video_url }}"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-    </iframe>
-
+        <iframe
+            width="100%" height="500"
+            src="{{ aula_atual.video_url }}"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
     {% elif aula_atual.tipo == "pdf" %}
-
-    <a href="{{ aula_atual.arquivo_url }}" target="_blank" rel="noopener noreferrer">
-        Abrir material
-    </a>
-
+        <a href="{{ aula_atual.arquivo_url }}" target="_blank" rel="noopener noreferrer">
+            Abrir material
+        </a>
     {% endif %}
+
+    <!-- Botão de conclusão -->
+    <button id="btn-concluir" data-aula-id="{{ aula_atual.id }}" onclick="concluirAula()">
+        Marcar como concluída
+    </button>
 
     {% else %}
 
     <h1>{{ conteudo.titulo }}</h1>
-    <p>{{ conteudo.resumo }}</p>
+    <p>{{ conteudo.corpo|safe }}</p>
 
     {% endif %}
 
 </main>
 </div>
+
+<script src="{% static 'js/progresso.js' %}"></script>
+<script>
+    const CONTEUDO_ID = "{{ conteudo.id }}";
+
+    // Lê AULAS_POR_MODULO direto dos data-attributes do HTML
+    const AULAS_POR_MODULO = {};
+    document.querySelectorAll('[data-modulo-id]').forEach(el => {
+        const moduloId = el.dataset.moduloId;
+        const aulas = el.dataset.aulas ? el.dataset.aulas.split(',') : [];
+        AULAS_POR_MODULO[moduloId] = aulas;
+    });
+
+    function concluirAula() {
+        const btn = document.getElementById('btn-concluir');
+        const aulaId = btn.dataset.aulaId;
+        const estado = Progresso.toggleAula(CONTEUDO_ID, aulaId, AULAS_POR_MODULO);
+        const concluida = !!estado.aulas[String(aulaId)];
+        btn.textContent = concluida ? 'Concluída' : 'Marcar como concluída';
+        btn.classList.toggle('btn-concluido', concluida);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        Progresso.init(CONTEUDO_ID, AULAS_POR_MODULO);
+
+        const btn = document.getElementById('btn-concluir');
+        if (btn) {
+            const aulaId = btn.dataset.aulaId;
+            const estado = Progresso.carregar(CONTEUDO_ID);
+            const concluida = !!estado.aulas[String(aulaId)];
+            btn.textContent = concluida ? 'Concluída' : 'Marcar como concluída';
+            btn.classList.toggle('btn-concluido', concluida);
+        }
+    });
+</script>
 
 {% endblock %}

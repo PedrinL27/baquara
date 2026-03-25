@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from . import views
 from core.views import home, categorias, manifesto, sobre
 
@@ -8,6 +8,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
     path("", home, name="home"),
     path('categorias/', categorias, name='categorias'),
     path('manifesto/', manifesto, name='manifesto'),
