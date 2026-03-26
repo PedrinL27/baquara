@@ -3,3 +3,5 @@ psycopg2-binary
 gunicorn
 django-environ
 django-ckeditor-5
+whitenoise
+dj-database-url
