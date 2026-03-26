@@ -29,6 +29,11 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["localhost", ".railway.app", "baquara.wiki.br"]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.railway.app',
+    'https://baquara.wiki.br',
+]
+
 
 # Application definition
 
