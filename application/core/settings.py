@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", ".railway.app", "baquara.wiki.br"]
+ALLOWED_HOSTS = ["localhost", "www.baquara.wiki.br", "baquara.wiki.br"]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.railway.app',
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'core.middleware.RedirectWWWMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
