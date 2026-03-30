@@ -54,6 +54,27 @@
   text-decoration: none;
 }
 
+.btn-error404-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--text);
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-family: var(--font-main);
+}
+
+.btn-error404-ghost:hover {
+  border-color: var(--primary);
+  text-decoration: none;
+}
+
 
 .error404-divider {
   width: 40px;
