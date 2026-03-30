@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}404 Página não encontrada{% endblock %}
+
+{% block content %}
+
+<div class="error404-page">
+  <span class="error404-code-bg">404</span>
+
+  <h1 class="error404-title">Página não encontrada</h1>
+  <p class="error404-description">
+    O endereço que você tentou acessar não existe ou foi movido para outro lugar.
+    Verifique o link ou volte para a página inicial.
+  </p>
+
+  <div class="error404-actions">
+    <a href="/" class="btn-error404-primary">
+      Voltar ao início
+    </a>
+  </div>
+
+  <div class="error404-divider"></div>
+  <p class="error404-footer-text">Se acredita que isso é um erro, entre em contato com o suporte.</p>
+</div>
+  {% endblock %}

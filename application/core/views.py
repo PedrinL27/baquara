@@ -36,11 +36,8 @@ def categoria_detail(request, slug):
 def conteudo_detail(request, slug):
 
     conteudo = Conteudo.objects.get(slug=slug)
-
     modulos = conteudo.modulos.all().order_by('ordem')
-
     aula_id = request.GET.get("aula")
-
     aula_atual = None
 
     if aula_id:
@@ -51,3 +48,13 @@ def conteudo_detail(request, slug):
         "modulos": modulos,
         "aula_atual": aula_atual
     })
+
+# Views para erros personalizados
+
+def erro_404(request, exception):
+    return render(request, 'pages/errors/404.html', {
+        'path': request.path,
+    }, status=404)
+
+def erro_500(request):
+    return render(request, 'pages/errors/500.html', status=500)

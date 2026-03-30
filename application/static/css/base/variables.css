@@ -6,10 +6,11 @@
   --background: #f8fafc;
   --border: #d1d5db;
   --border-nav: #777a7e;
+  --navbar-bg: white;
 
   --max-width: 1300px;
 
-  --navbar-bg: white;
+  --border-radius: 8px;
 
   --font-main: system-ui, -apple-system, Arial;
 

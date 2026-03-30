@@ -5,9 +5,11 @@
 @import "base/global.css";
 @import "base/darkmode.css";
 
+
 @import "layout/navbar.css";
 @import "layout/footer.css";
 @import "layout/sidebar.css";
+
 
 @import "pages/home.css";
 @import "pages/manifesto.css";
@@ -15,3 +17,6 @@
 @import "pages/sobre.css";
 @import "pages/curso/cursos.css";
 @import "pages/curso/aulas.css";
+
+@import "pages/errors/404.css";
+@import "pages/errors/500.css";
