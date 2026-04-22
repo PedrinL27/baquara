@@ -56,7 +56,7 @@ Dentro do Baquara, o acesso será sempre gratuito.
 
 Backend: Django  
 Banco de dados: PostgreSQL  
-Frontend: Django Templates + HTMX  
+Frontend: HTML e CSS
 Infraestrutura: Docker  
 
 Status: Projeto em estágio inicial
